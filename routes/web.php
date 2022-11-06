@@ -3,14 +3,22 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Blog1;
 
+// Route::get('/', function () {
+//     return view('blogs');
+// });
 Route::get('/', function () {
-    return view('blogs');
-});
+  //return $b;
+    return view('blogs',[
+       'arr'=> Blog1::all()  //$blog=<h1>data</h1>
+     //  $blog=file_get_contents($path);
+   ]);
+  });
+
 Route::get('/route1/{blogfg}', function ($slug) {
    $b=Blog1::find($slug);
    //return $b;
      return view('blogw1',[
-        'blogaa'=> $b  //$blog=<h1>data</h1>
+        'bloga2'=> $b  //$blog=<h1>data</h1>
       //  $blog=file_get_contents($path);
     ]);
     
