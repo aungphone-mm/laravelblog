@@ -8,11 +8,9 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    
-<article>
-    <?= $blogaa ?>
-</article>
-
+    <h1><?= $bloga2 ->title; ?></h1>
+    <p><?= $bloga2 ->body; ?></p>
+    <a href="/">go back</a>
 
 </body>
 </html>

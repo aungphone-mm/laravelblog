@@ -8,20 +8,11 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <article>
-    <h1><a href="/route1/firstblog">First Blog</a></h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, a laborum voluptatum cum beatae sapiente laboriosam. Quas repudiandae dolor rem quos, eius nostrum quia consequatur accusantium veniam. Reiciendis, necessitatibus perferendis.
-</p>
-</article>
-<article>
-    <h1><a href="/route1/secondblog">second Blog</a></h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, a laborum voluptatum cum beatae sapiente laboriosam. Quas repudiandae dolor rem quos, eius nostrum quia consequatur accusantium veniam. Reiciendis, necessitatibus perferendis.
-</p>
-</article>
-<article>
-    <h1><a href="/route1/thirdblog"> Third Blog</a></h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, a laborum voluptatum cum beatae sapiente laboriosam. Quas repudiandae dolor rem quos, eius nostrum quia consequatur accusantium veniam. Reiciendis, necessitatibus perferendis.
-</p>
-</article>
+<?php foreach($arr as $a): ?>
+    <h1><a href="route1/<?= $a->slug; ?>"><?= $a->title; ?></a></h1>
+    <div>
+        <p><?= $a->date; ?></p>
+        <p><?= $a->intro; ?></p>
+<?php endforeach; ?>
 </body>
 </html>
