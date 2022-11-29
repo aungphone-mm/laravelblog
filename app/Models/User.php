@@ -21,6 +21,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
+        'email_verified_at',
+        'remember_token',
+        'created_at',
+        'update_at'
     ];
 
     /**
@@ -41,4 +46,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
 }

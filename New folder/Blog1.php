@@ -39,6 +39,18 @@ class Blog1
    //dd($blogs->first());
    return $blogs->firstWhere('slug',$slug); 
   }
+
+  public static function findorfail($slug)
+  {
+   $blogs=static::all();
+   //dd($blogs->first());
+   $blog= $blogs->firstWhere('slug',$slug); 
+   if(!$blog){
+    //@dd($blog);
+   throw new ModelNotFoundException();
+   } 
+   return $blog;
+  } 
 //     public static function find($slug)
 //     {
 //       //return __DIR__;
@@ -56,6 +68,5 @@ class Blog1
 //         return file_get_contents($path);
     
 //     });
-// }
 
 }

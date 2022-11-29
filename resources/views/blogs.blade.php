@@ -1,15 +1,27 @@
-@extends('layout')
-@section('title')
-<title>all blog</title>
-@endsection
-@section('content')
-
-    @foreach($arr as $a)
-    <div class="{{ $loop->odd ? 'bg-yellow': ''}}">
-        <h1><a href="route1/<?= $a->slug; ?>"><?= $a->title; ?></a></h1>
+<x-layout>
+    <x-slot name="title">
+        <title>All Blogs</title>
+    </x-slot>
+    @foreach($arr1 as $b)
+    <div>
+        <h1><a href="route1/{{$b->slug}}">
+                {{$b->title}}
+            </a></h1>
+            <h4>Author - <a href="/users/{{$b->author->id}}">{{$b->author->name}}</a></h4>
+        <p>
+            <a href="/categories/{{$b->category->slug}}">{{$b->category->name}}</a>
+        </p>
+        
         <div>
-            <p><?= $a->date; ?></p>
-            <p><?= $a->intro; ?></p>
+            <p>
+                published at -
+                {{$b->created_at->diffForHumans()}}
+            </p>
+            <p>
+                {{$b->intro}}
+            </p>
+            blogs.blade.php
         </div>
     </div>
     @endforeach
+</x-layout>
