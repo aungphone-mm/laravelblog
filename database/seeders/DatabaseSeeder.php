@@ -20,10 +20,10 @@ class DatabaseSeeder extends Seeder
         Blog::truncate();
         Category::truncate();
 
-        $frontend=Category::factory()->create(['name'=>'frontend']);
+        $frontend=Category::factory()->create(['name'=>'frontend']);//category table မှာ 2ကြောင်းဝင်
         $backend=Category::factory()->create(['name'=>'backend']);
 
-        Blog::factory(2)->create(['category_id'=>$frontend->id]);
+        Blog::factory(2)->create(['category_id'=>$frontend->id]);//blog table မှာ ၄ကြောင်းဝင်
         Blog::factory(2)->create(['category_id'=>$backend->id]);
     }
 }

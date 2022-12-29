@@ -9,7 +9,7 @@ class Blog extends Model
 {
     use HasFactory;
     //protected $fillable=['title'];
-    protected $with=['category','author'];
+    protected $with=['category','author']; //blog တစ်ခုဆွဲရင် category, author ပါဆွဲ
     public function Category()
     {
         return $this->belongsTo(Category::class);

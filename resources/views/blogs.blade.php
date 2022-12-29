@@ -1,4 +1,11 @@
 <x-layout>
+    <x-hero />
+    <x-blogs-section :blogs="$arr1" />
+    <x-subscribe />
+</x-layout>
+
+<!--    @dd($arr1)နဲ့ အပေါ်ဆုံးမှာစမ်းနိုင် 
+    <x-layout>
     <x-slot name="title">
         <title>All Blogs</title>
     </x-slot>
@@ -7,9 +14,9 @@
         <h1><a href="route1/{{$b->slug}}">
                 {{$b->title}}
             </a></h1>
-            <h4>Author - <a href="/users/{{$b->author->id}}">{{$b->author->name}}</a></h4>
+            <h4>Author - <a href="/users/{{$b->author->username}}">{{$b->author->name}}</a></h4>
         <p>
-            <a href="/categories/{{$b->category->slug}}">{{$b->category->name}}</a>
+            Category - <a href="/categories/{{$b->category->slug}}">{{$b->category->name}}</a>
         </p>
         
         <div>
@@ -24,4 +31,6 @@
         </div>
     </div>
     @endforeach
-</x-layout>
+</x-layout> -->
+
+

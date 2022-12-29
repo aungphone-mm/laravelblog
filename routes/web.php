@@ -15,9 +15,10 @@ Route::get('/', function () {
   //   logger($query->sql);
   // });
   //return $b;
-    return view('blogs',[
-       'arr1'=> Blog::with('Category','author')->get()  //eager load , lazy loading
+    return view('blogs',[     //to blogs.blade.php
+       //'arr1'=> Blog::with('Category','author')->get()  //eager load , lazy loading
        //  $blog=file_get_contents($path);
+       'arr1'=>Blog::Latest()->get()
    ]);
    
   });
@@ -26,9 +27,9 @@ Route::get('/categories/{categ:slug}', function (Category $categ){
     'arr1'=> $categ->blogs2
   ]);
 });
-Route::get('/users/{user}', function (User $user) {
+Route::get('/users/{user:username}', function (User $user) {//wildcard ကdefaultက id,usernameထည့်မှep35
   return view('blogs', [
-      'arr1'=>$user->blogs
+      'arr1'=>$user->blog    //မြန်မာလိုဘလော့ရေးလို့ရ
   ]);
 });
   Route::get('/route1/{blogfg:slug}', function (Blog $blogfg) {
