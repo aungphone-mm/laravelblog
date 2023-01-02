@@ -2,11 +2,11 @@
     <div class="container">
         <a
             class="navbar-brand"
-            href="./index.html"
+            href="/"
         >Creative Coder</a>
         <div class="d-flex">
             <a
-                href="#home"
+                href="/"
                 class="nav-link"
             >Home</a>
             <a

@@ -1,9 +1,14 @@
+
 <x-layout>
     <x-hero />
-    <x-blogs-section :blogs="$arr1" />
+    <x-blogs-section 
+    :blogs="$arr1" 
+    :categories="$categories"
+    :currentCategory="$currentCategory ?? null"
+    />
     <x-subscribe />
 </x-layout>
-
+blogs.blade.php
 <!--    @dd($arr1)နဲ့ အပေါ်ဆုံးမှာစမ်းနိုင် 
     <x-layout>
     <x-slot name="title">
